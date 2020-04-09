@@ -20,6 +20,7 @@ Services to build with from Elastic Beanstalk
    - Elastic Load Balancer
    - EC2
    - S3
+   
    -- Except for Lambda, all of the services listed can be used to create a web server farm. 
       AWS Lambda automatically runs your code without requiring you to provision or manage servers. 
       Lambda is generally used for stateless, short-running tasks and is not suitable for long-running tasks like running a web server.
