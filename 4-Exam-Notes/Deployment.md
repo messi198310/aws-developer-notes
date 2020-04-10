@@ -1,5 +1,7 @@
 DynamoDB
+
 -In DynamoDB, a primary key can be composite partition/sort key.
+
 -In DynamoDB, a primary key can be a single-attribute partition key
 
 Message sending from ECS - What policy?
