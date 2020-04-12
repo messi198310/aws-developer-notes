@@ -101,3 +101,11 @@ You need to announce emergency downtime for a production AWS web application. Th
    -  Send a single message, but customize the text in the SNS message field so that each device gets only the information that is appropriate for them.
    
 Explanation - Using the SNS JSON message generator, you can choose the appropriate endpoint types and edit the generated code to send different text to the different endpoint types.
+
+You are working on updates to your .NET application which has been deployed using Elastic Beanstalk. Your environment consists of 4 EC2 instances, as well as a number of different Lambda functions and DynamoDB tables. The application requires at least 2 instances to cope with the average workload and a minimum of 3 instances to cope with peak-time traffic. The Project Manager has asked you to roll out the updates as quickly as possible. Which of the following deployment strategies do you recommend?
+
+   - Rolling
+   
+Explanation:
+An all-at-once deployment deploys to all instances simultaneously which will put all of your web servers out of action at once. Rolling with additional batch launches an extra batch of instances before starting the deployment, to maintain full capacity. However, full capacity is not required in this scenario. Immutable deployments perform an immutable update to launch a full set of new instances running the new version of the application in a separate Auto Scaling group, alongside the instances running the old version; this is not required in this scenario. You can use a rolling update with a batch size of 25%, to ensure that 75% of your servers remain available at any time.
+
