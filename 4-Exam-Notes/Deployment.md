@@ -111,3 +111,33 @@ What is the maximum size of an item in a DynamoDB table?
    - 400 KB
    
 Explanation - The maximum item size in DynamoDB is 400 KB.
+
+Which section of the AWS Serverless Application Model template would you use to describe the configuration of a Lambda function and an API Gateway endpoint, if you were deploying your application using AWS SAM?
+
+   - Transform
+   
+Explanation - Use the Transform section to describe your Serverless functions when using the serverless application model. Under the Transform section, you define the resources you want to deploy.
+
+How long can a message be retained in an SQS Queue?
+
+   -  14 days
+   
+Explanation - Messages will be retained in queues for up to 14 days.
+
+As a developer you have built a WordPress site. Traffic to the site has increased and you have improved the site's functionality to meet the demand of your viewers since launch. Changes are coming frequently, and you are considering using AWS CloudFormation to automate the process of building test stacks, creating a change set, and executing the change set. How would you streamline this process in AWS most efficiently?
+
+   - Create a CodePipeline separated by three stages. For each stage organize actions in a pipeline. Have CodePipeline complete all actions in a stage before the stage processes new artifacts.
+   
+Explanation - Continuous delivery is a release practice in which code changes are automatically built, tested, and prepared for release to production. With AWS CloudFormation and CodePipeline, you can use continuous delivery to automatically build and test changes to your AWS CloudFormation templates before promoting them to production stacks. This release process lets you rapidly and reliably make changes to your AWS infrastructure. Although you can manually interact with CloudFormation to execute the various stages, this is not the most efficient method. Amazon Inspector is an automated security assessment service which evaluates the security loopholes in deployed resources specific to EC2. Config is a monitoring and governance tool that tracks changes to your AWS environment based on rules you configure.
+
+Which of the following could you NOT achieve using the Amazon SQS Extended Client Library for Java?
+
+   - Create a new S3 bucket and move a batch of SQS messages into the bucket
+   
+Explanation - You can use Amazon S3 and the Amazon SQS Extended Client Library for Java to manage Amazon SQS messages stored in S3. This includes specifying when messages should be stored in S3, referencing message objects stored in S3, getting them, and deleting them.
+
+You are developing a Serverless application written in Node.js, which will run on Lambda. During performance testing, you notice that the application is not running as quickly as you would like and you suspect that your Lambda function does not have enough CPU capacity. Which of the following options will improve the overall performance of your function?
+
+   - Configure more memory for your function
+ 
+Explanation - In the AWS Lambda resource model, you choose the amount of memory you want for your function, and are allocated proportional CPU power and other resources. For example, choosing 256MB of memory allocates approximately twice as much CPU power to your Lambda function as requesting 128MB of memory and half as much CPU power as choosing 512MB of memory. Lambda allocates CPU power linearly in proportion to the amount of memory configured.
