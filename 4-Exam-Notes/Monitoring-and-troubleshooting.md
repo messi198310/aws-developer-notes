@@ -20,3 +20,28 @@ Which service can the team use to collect information about traffic that is anal
    - Kinesis Data Firehose
    
 Explanation - In order to enable and configure AWS WAF logs, a Kinesis Data Firehose is required for delivery of the logs to the destination.
+
+You have developed a CloudFormation stack in the AWS Management Console. You have a few small number of CloudFormation stacks saved in the Region in which you are operating in. When you launch your stack that contains many EC2 resources, you receive the error Status=start_failed. How would you troubleshoot this issue?
+
+   - Use the Support Center in the AWS Management Console to request an increase in the number of EC2 instances.
+   
+Explanation - Verify that you didn't reach a resource limit. For example, the default number Amazon EC2 instances that you can launch is 20. If you try to create more Amazon EC2 instances than your account limit, the instance creation fails and you receive the error Status=start_failed. Also, during an update, if a resource is replaced, AWS CloudFormation creates new resource before it deletes the old one. This replacement might put your account over the resource limit, which would cause your update to fail. You can delete excess resources or request a limit increase. Saving the template in the CLI or waiting a few minutes will have no impact. The default limit for CloudFormation stacks is 200 and the question explicitly states that there are only a very small number of existing stacks.
+
+Database queries are now running much slower than usual and the Operations Team are concerned that the DynamoDB table is being throttled. Which of the following approaches would you recommend to improve read performance?
+
+   - Configure a DAX cluster and point the DynamoDB API calls at the DAX cluster
+   
+Explanation - Using DAX is the recommended approach to reducing response times for read-intensive applications, applications which read a small number of items frequently and also applications which perform repeated reads against a large set of data. Read Replicas are not a feature of DynamoDB. Configuring the application to use scans instead is not an efficient solution.
+
+A developer deployed a serverless application consisting of an API Gateway and Lambda function using CloudFormation. Testing of the application resulted in a 500 status code and 'Execution failed due to configuration' error. What is a possible cause of the error?
+
+   - POST method was not used when invoking the Lambda function from API Gateway.
+   
+Explanation - POST method must be used when invoking a Lambda function via REST API. This should not be confused with the methods used to access the APIs on the API Gateway. When deploying AWS Lambda and API Gateway resources via CloudFormation, you must ensure that the POST method is used when integrating API Gateway with an AWS Lambda function.
+
+A company compliance policy mandates that all production account data must be stored across multiple geographically distant locations. In order to meet this requirement, they configured Amazon S3 Cross-Region Replication on their production account buckets. They find that S3 objects are not being replicated. What needs to be implemented to resolve this issue?
+
+   - S3 source object owner must grant source bucket owner full access permissions.
+   - Bucket policy on the destination bucket must allow the source bucket owner to replicate objects.
+   
+Explanation - S3 Bucket Versioning is a requirement to configure S3 Cross-Region Replication and must be enabled before S3 Cross-Region Replication can even be configured. This is therefore not part of the correct answer. S3 lifecycle policies are not related to replication of S3 data between accounts or regions. S3 lifecycle policies can be used to transition S3 objects to another Amazon S3 storage class. Using bucket event notifications would also not resolve this issue. Source bucket owner must have permissions to replicate objects on the destination S3 bucket in order for replication to succeed. This is accomplished by providing the source bucket owner permissions in the destination bucket policy. Additionally, source bucket owner must have access permissions to objects in the source bucket that are being replicated in order for replication to succeed. It is possible that IAM users other than the S3 bucket owner have permissions to put objects in the source bucket. In that scenario, the object owner must grant access permissions on the objects to the bucket owner.
