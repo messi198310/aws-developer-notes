@@ -23,7 +23,7 @@ Services to build with from Elastic Beanstalk
    - EC2
    - S3
    
-   -- Except for Lambda, all of the services listed can be used to create a web server farm. 
+EXPLANATION - Except for Lambda, all of the services listed can be used to create a web server farm. 
       AWS Lambda automatically runs your code without requiring you to provision or manage servers. 
       Lambda is generally used for stateless, short-running tasks and is not suitable for long-running tasks like running a web server.
 
@@ -31,5 +31,5 @@ Docker commands to push image
    - Run: aws ecr get-login --no-include-email --region us-east-1 Run the docker login command that was returned in the previous step. Then run: docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-repository
    - Run: docker tag -i my-image latest Then run: docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-repository
 
-The aws ecr get-login command provides an authorization token that is valid for 12 hours. You need to run the command which was returned by the ecr get-login command to authorize you to push images to the ECR repository. For a full list of the steps, see the link below.
+EXPLANATION - The aws ecr get-login command provides an authorization token that is valid for 12 hours. You need to run the command which was returned by the ecr get-login command to authorize you to push images to the ECR repository. For a full list of the steps, see the link below.
 
