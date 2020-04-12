@@ -45,3 +45,26 @@ The Project Manager has asked you to roll out the updates as quickly as possible
 
 EXPLANATION - An all-at-once deployment deploys to all instances simultaneously which will put all of your web servers out of action at once. Rolling with additional batch launches an extra batch of instances before starting the deployment, to maintain full capacity. However, full capacity is not required in this scenario. Immutable deployments perform an immutable update to launch a full set of new instances running the new version of the application in a separate Auto Scaling group, alongside the instances running the old version; this is not required in this scenario. You can use a rolling update with a batch size of 25%, to ensure that 75% of your servers remain available at any time.
 
+What permissions need to be configured to allow CodeDeploy to perform the deployment to EC2?
+
+   - Create an IAM policy with an acton to allow `codecommit:GitPull` on the required repository. Attach the policy to the EC2 instance profile role.
+   
+Explanation - CodeDeploy interacts with EC2 via the CodeDeploy Agent, which must be installed and running on the EC2 instance. During a deployment the CodeDeploy Agent running on EC2 pulls the source code from CodeCommit. The EC2 instance accesses CodeCommit using the permissions defined in its instance profile role; therefore, it is the EC2 instance itself that needs CodeCommit access. The specific CodeCommit permission needed to pull code is `codecommit:GitPull`.
+
+You are developing a Lambda function which takes an average of 20 seconds to execute. During performance testing, you are trying to simulate peak loads, however soon after the testing begins, you notice that requests are failing with a throttling error. What could be the problem?
+
+   - You have reached the limit of concurrent executions for Lambda.
+   
+Explanation - When requests come in faster than your function can scale, or when your function is at maximum concurrency, additional requests fail with a throttling error (429 status code).
+
+An organization is considering performing canary deployments with their application. Which of the following statements best describes a canary deployment?
+
+   - A new version of the application is deployed alongside the existing version. A proportion of application’s traffic is directed to the new application. If, after a given number of minutes, metrics demonstrate that the new version is performing correctly, the remainder of the traffic is moved to the new version.
+   
+Explanation - A canary deploy allows us to gain confidence in an application update by initially just releasing it to a subsection of users. Once we are satisfied that the update is working as expected, the update is then rolled out to the remaining users. The concept of a canary deployment is covered in the AWS Well-Architected Framework, and is a feature of API Gateway. It can also be performed manually using Route53 Weighted Records, or via an Application Load Balancer with a Forward Action and Weighted Target Groups.
+
+You have configured your CI/CD process using CodePipeline, however you want to introduce a manual sign-off and approval process which needs to be completed before a new version of your application is deployed to Production. How can you achieve this?
+
+   - Use the CodePipeline Manual Approvals feature
+   
+Explanation - With CodePipeline, you can add an approval action to a stage in a pipeline at the point where you want the pipeline execution to stop so that someone with the required AWS Identity and Access Management permissions can approve or reject the action.
