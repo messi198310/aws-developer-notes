@@ -51,3 +51,11 @@ You are developing a mobile web application using Lambda and API Gateway which s
    - Configure a Cognito User Pool to handle new user sign-up
 
 Explanation - Cognito is the recommended approach for user sign-up and sign-in for mobile applications which allow access to users with Facebook, Google or Amazon.com credentials. User pools are user directories that provide sign-up and sign-in options for your app users. Identity pools enable you to grant your users access to other AWS services.
+
+Your main application currently stores its credentials as a text file on an EC2 server. Your Manager has informed you that this is an insecure practice and has told you to store these credentials in an AWS managed service instead. AWS Systems Manager Parameter Store and AWS Secrets Manager can be used for the secure storage of credentials. Of the below features, which apply to both Secrets Manager and Parameter Store?
+
+   - Integrated with Identity and Access Management
+   - Supports encryption at rest using customer-owned KMS keys
+   - Can store credentials in hierarchical form
+   
+Explanation - Many aspects of Parameter Store and Secrets Manager appear very similar, but Secrets Store charges you for storing each secret and also provides a secret rotation service whereas Parameter Store does not. Therefore these are the only two answers related to both services.
