@@ -75,3 +75,29 @@ You are developing a serverless retail application which includes a mobile app. 
    - Configure the table with 10 read capacity units
    
 Explanation - A read capacity unit represents one strongly consistent read per second, or two eventually consistent reads per second, for an item up to 4 KB in size. Eventually consistent reads provide greater throughput than strongly consistent. In this case the data changes infrequently, so eventually consistent is a good option.
+
+
+You are working on a Serverless application written in Python and running in Lambda. You have uploaded multiple versions of your code to Lambda, but would like to make sure your test environment always utilizes the latest version. How can you configure this?
+
+   - Reference the function using a qualified ARN and the $LATEST suffix
+   - Reference the function using an unqualified ARN
+   
+Explanation - When you create a Lambda function, there is only one version: $LATEST. You can refer to the function using its Amazon Resource Name (ARN). There are two ARNs associated with this initial version, the qualified ARN which is the function ARN plus a version suffix e.g. $LATEST. Or the unqualified ARN which is the function ARN without the version suffix. The function version for an unqualified function always maps to $LATEST, so you can access the latest version using either the qualified ARN with $LATEST, or the unqualified function ARN. Lambda also supports creating aliases for each of your Lambda function versions. An alias is a pointer to a specific Lambda function version, aliases will not be updated automatically when a new version of the function becomes available.
+
+You are planning to write some Python code which will query a DynamoDB table and display the output on your website, which of the following tools can you use to start writing your code?
+
+   - Cloud9
+   
+Explanation - AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. 
+You work for a company which facilitates and organizes technical conferences. You ran a large number of events this year with many high profile speakers and would like to enable your customers to access videos of the most popular presentations. You have stored all your content in S3, but you would like to restrict access so that people can only access the videos after logging into your website. How should you configure this?
+
+   - Remove public read access from the S3 bucket where the videos are stored
+   - Share the videos by creating a pre-signed URL
+   
+Explanation - All objects by default are private. Only the object owner has permission to access these objects. However, the object owner can optionally share objects with others by creating a pre-signed URL, using their own security credentials, to grant time-limited permission to download the objects. Anyone who receives the pre-signed URL can then access the object. For example, if you have a video in your bucket and both the bucket and the object are private, you can share the video with others by generating a pre-signed URL.
+
+You need to announce emergency downtime for a production AWS web application. This downtime notification requires different sets of instructions for different devices. All of the application users signed up to receive SNS notifications from the downtime topic when they began using the application and they are currently subscribed to this topic. What are appropriate ways for you to provide timely, device-specific instructions to end users when announcing this downtime?
+
+   -  Send a single message, but customize the text in the SNS message field so that each device gets only the information that is appropriate for them.
+   
+Explanation - Using the SNS JSON message generator, you can choose the appropriate endpoint types and edit the generated code to send different text to the different endpoint types.
