@@ -22,3 +22,9 @@ You are designing a new web application and you need to find a solution to impro
    - ElastiCache
    
 Explanation - CloudFront and ElastiCache are both caching technologies which can be used to improve performance of web applications, by caching data and content. DynamoDB is a high performance NoSQL database however it will not necessarily improve the performance of your application. X-Ray can be used to detect bottlenecks and visualize distributed apps, but it will not improve performance of your application.
+
+You need to monitor application-specific events every 10 seconds. How can you configure this?
+ 
+   - configure a high-resolution custom metric in CloudWatch
+   
+Explanation - You need to configure a custom metric to handle application specific events and if you want to monitor at 10 second intervals, you need to use high-resolution metrics. Detailed monitoring reports metrics at 1 minute intervals.
