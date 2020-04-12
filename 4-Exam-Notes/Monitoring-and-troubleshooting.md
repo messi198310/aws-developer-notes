@@ -45,3 +45,27 @@ A company compliance policy mandates that all production account data must be st
    - Bucket policy on the destination bucket must allow the source bucket owner to replicate objects.
    
 Explanation - S3 Bucket Versioning is a requirement to configure S3 Cross-Region Replication and must be enabled before S3 Cross-Region Replication can even be configured. This is therefore not part of the correct answer. S3 lifecycle policies are not related to replication of S3 data between accounts or regions. S3 lifecycle policies can be used to transition S3 objects to another Amazon S3 storage class. Using bucket event notifications would also not resolve this issue. Source bucket owner must have permissions to replicate objects on the destination S3 bucket in order for replication to succeed. This is accomplished by providing the source bucket owner permissions in the destination bucket policy. Additionally, source bucket owner must have access permissions to objects in the source bucket that are being replicated in order for replication to succeed. It is possible that IAM users other than the S3 bucket owner have permissions to put objects in the source bucket. In that scenario, the object owner must grant access permissions on the objects to the bucket owner.
+
+You are testing a new Serverless application which uses Lambda, S3, DynamoDB and API Gateway. You are suddenly seeing a large number of 4XX HTTP response codes coming from API Gateway. What could be the problem and what should you do about this?
+
+   - This is a client error, you should fix the issue in your application and retry the request
+   
+Explanation - Client errors: Client errors are indicated by a 4xx HTTP response code. Client errors indicate that Amazon API Gateway found a problem with the client request, such as an authentication failure or missing required parameters. Fix the issue in the client application before submitting the request again. Server errors: Server errors are indicated by a 5xx HTTP response code, and need to be resolved by Amazon. You can resubmit/retry the request until it succeeds.
+
+You are responsible for a number of different applications which are hosted across multiple regions. You would like to use CloudWatch to view all system metrics data in one place. Which of the following approaches should you choose?
+
+   - Create a single dashboard to cover all the regions and include metrics for each application
+   
+Explanation - CloudWatch dashboards are customizable home pages in the CloudWatch console that you can use to monitor your resources in a single view, even those resources that are spread across different Regions.
+
+Your application is running on EC2 and on Linux virtual machines in your own data center. You would like to configure your application to send data to X-Ray for troubleshooting and performance analysis. Which of the following steps will you need to complete?
+
+   - Install the X-Ray SDK and the X-Ray daemon, then instrument your application to send data to X-Ray.
+   
+Explanation - You need the X-Ray SDK and the X-Ray daemon on your EC2 instances and on-premises systems, you then need to instrument your application to send the required data to X-Ray
+
+You are attempting to list the objects contained in an S3 bucket. The bucket contains over 3000 objects and the list-objects command times out and does not complete successfully, however when you run the same command on a different bucket, it works without errors. What could be the reason for this?
+
+   - You are running the command on a bucket which contains a large number of resources, and the default page size might be too high.
+   
+Explanation - If you see issues when running list commands on a large number of resources, the default page size of 1000 might be too high. This can cause calls to AWS services to exceed the maximum allowed time and generate a "timed out" error. You can use the --page-size option to specify that the AWS CLI request a smaller number of items from each call to the AWS service. The CLI still retrieves the full list, but performs a larger number of service API calls in the background and retrieves a smaller number of items with each call. This gives the individual calls a better chance of succeeding without a timeout. Changing the page size doesn't affect the output; it affects only the number of API calls that need to be made to generate the output.
