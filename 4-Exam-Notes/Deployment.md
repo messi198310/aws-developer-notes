@@ -33,3 +33,21 @@ Docker commands to push image
 
 EXPLANATION - The aws ecr get-login command provides an authorization token that is valid for 12 hours. You need to run the command which was returned by the ecr get-login command to authorize you to push images to the ECR repository. For a full list of the steps, see the link below.
 
+Which of the following AWS services could the organization use under this new policy?
+   - Fargate
+   - S3
+   - DynamoDB
+
+EXPLANATION - AWS consider S3, DynamoDB, and Fargate to be serverless services.
+
+What is the AWS recommended way of managing large messages in SQS?
+   - Store the messages using S3
+   - Use the Amazon SQS Extended Client Library for Java to manage SQS messages
+   
+Explanation - You can use Amazon S3 and the Amazon SQS Extended Client Library for Java to manage Amazon SQS messages. This is especially useful for storing and consuming messages up to 2 GB in size. Unless your application requires repeatedly creating queues and leaving them inactive or storing large amounts of data in your queue, consider using Amazon S3 for storing your data. You can use the Amazon SQS Extended Client Library for Java to manage Amazon SQS messages using Amazon S3. However, you can't do this using the AWS CLI, the Amazon SQS console, the Amazon SQS HTTP API, or any of the AWS SDKs—except for the SDK for Java.
+
+Which of the following technologies would you use to build and deploy Lambda functions as well as API Gateway endpoints?
+   - AWS Serverless Application Model CLI
+   -  CloudFormation
+   
+Explanation - CloudFormation and the AWS SAM CLI can be used to deploy serverless applications. Use the Transform section of the CloudFormation template to specify the serverless resources you would like to deploy. The other technologies cannot be used to deploy serverless applications. OpsWorks provides configuration management using managed instances of Puppet or Chef. Elastic Beanstalk is for deploying and scaling web applications on familiar servers such as Apache, Nginx, Passenger, and IIS. CodeBuild is an automated build system, and CodeDeploy deploys your built code to either EC2 or an on-premises server.
