@@ -68,3 +68,10 @@ You have configured your CI/CD process using CodePipeline, however you want to i
    - Use the CodePipeline Manual Approvals feature
    
 Explanation - With CodePipeline, you can add an approval action to a stage in a pipeline at the point where you want the pipeline execution to stop so that someone with the required AWS Identity and Access Management permissions can approve or reject the action.
+
+You are developing a serverless retail application which includes a mobile app. All your product data is stored in DynamoDB, whilst the application itself runs on Lambda. The product catalogue is updated once every 6 months, to reflect seasonal stock and price updates. Each database read is 3KB in size and the application performs around 20 reads per second. Which of the following DynamoDB settings would you recommend?
+
+   - Use eventually consistent reads
+   - Configure the table with 10 read capacity units
+   
+Explanation - A read capacity unit represents one strongly consistent read per second, or two eventually consistent reads per second, for an item up to 4 KB in size. Eventually consistent reads provide greater throughput than strongly consistent. In this case the data changes infrequently, so eventually consistent is a good option.
