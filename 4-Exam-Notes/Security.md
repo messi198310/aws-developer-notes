@@ -59,3 +59,15 @@ Your main application currently stores its credentials as a text file on an EC2 
    - Can store credentials in hierarchical form
    
 Explanation - Many aspects of Parameter Store and Secrets Manager appear very similar, but Secrets Store charges you for storing each secret and also provides a secret rotation service whereas Parameter Store does not. Therefore these are the only two answers related to both services.
+
+Your application on EC2 must write to an Aurora cluster to store user and purchasing data. Your CISO implements a new company-wide policy that requires all AWS credentials are encrypted and rotated monthly. How would you fulfill the new security policy with minimum administrative burden?
+
+  - Attach an IAM role to the instance with proper credentials.
+  
+Explanation - AWS designed IAM roles so that your applications can securely make API requests from your instances, without requiring you to manage the security credentials that the applications use. IAM roles are based on temporary security tokens, so they are rotated automatically. Credentials embedded in source code cannot be rotated without it being an administrative burden, and is a bad practice. It’s impossible to retrieve credentials from an S3 bucket if you don’t already have credentials for that bucket. IAM users cannot be associated with resources, and Active Directory authorization will not grant access to AWS resources.
+
+You are working as a Developer for an online retailer. Your Security Architect has requested that any files stored in S3 must be encrypted. However some teams are continuing to upload their files without encrypting them. Which of the following will ensure that only encrypted data is uploaded?
+
+   - Use a bucket policy that only allows PUT operations which include the x-amz-server-side-encryption parameter in the request header
+   
+Explanation - There are a few different ways to enforce encryption, however from the provided options, the use of a bucket policy to reject requests that do not include encryption in their header is the best answer
