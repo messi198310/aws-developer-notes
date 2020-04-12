@@ -7,6 +7,7 @@ Lambda function written in Python to use client-side encryption
     before uploading them to S3. You can do this in Lambda by using the AWS Encryption SDK.
 
  How can you ensure the data is encrypted end-to-end in transit between your ELB and EC2 instances?
+ 
     - Configure a secure listener on your load balancer
     - Terminate HTTPS connections on your EC2 instances
     -  Configure the instances in your environment to listen on the secure port
