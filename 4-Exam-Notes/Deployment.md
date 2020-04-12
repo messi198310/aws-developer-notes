@@ -33,7 +33,7 @@ Docker commands to push image
 
 EXPLANATION - The aws ecr get-login command provides an authorization token that is valid for 12 hours. You need to run the command which was returned by the ecr get-login command to authorize you to push images to the ECR repository. For a full list of the steps, see the link below.
 
-Which of the following AWS services could the organization use under this new policy?
+Which of the following AWS services could the organization use under this new serverless policy?
    - Fargate
    - S3
    - DynamoDB
@@ -79,3 +79,35 @@ How would you recommend creating developer teams as a best practice to support t
    - Set up an application team to develop applications. Set up an infrastructure team to create and configure the infrastructure to run the applications. Set up a tools team to build and manage the CI/CD pipeline.
    
 Explanation - AWS recommends organizing three developer teams for implementing a CI/CD environment: an application team, an infrastructure team, and a tools team. This organization represents a set of best practices that have been developed and applied in fast-moving startups, large enterprise organizations, and in Amazon itself. The teams should be no larger than groups that two pizzas can feed, or about 10-12 people. This follows the communication rule that meaningful conversations hit limits as group sizes increase and lines of communication multiply. Hiring an external consulting firm will not be beneficial in the long run. Setting up a single team is not best practice. AWS CodePipeline is a continuous integration and continuous delivery service for fast and reliable application and infrastructure updates and not used for team structuring.
+
+Which of the following statements are true about the concept of blue/green deployment regarding development and deployment of your application?
+
+   - It allows you to shift traffic between two identical environments that are running different versions of your application.
+   
+Explanation - With blue/green deployment, you can shift traffic between two identical environments that are running different versions of your application. It allows you to easily deploy changes to your application and roll-back on changes very quickly.
+
+A company is developing its first lambda function. The function needs access to their existing EC2 instances, which are all hosted in private subnets within their VPC. What must the company do to ensure their lambda can access the EC2 instances?
+
+   - Configure lambda's execution role to have permissions for managing an ENI within the VPC.
+   - Configure the lambda function to connect the private subnets used by the EC2 instances.
+   - Configure lambda's security group, so it has access to the EC2 instances.
+   
+Explanation - To configure a lambda to connect to a VPC, one or more subnets into which it can connect must be defined. The lambda function creates an Elastic Network Interface in one of the given subnets. It, therefore, needs an execution policy that allows it permissions to do so. The specific permissions required are in the attached AWS documentation link. The Elastic Network Interface through which the lambda connects should then be associated with one or more security groups that allow network communication to the desired destinations, over the desired ports.
+
+What is the name of the SAM template property that defines the point in a Lambda function's code where execution begins?
+
+   - Handler
+
+Explanation - The Handler property specifies the Lambda function's entry point. For example, if the Lambda function was written in Python, and Handler was set to lambda_function.lambda_handler, execution would begin with the lambda_handler function, contained within the lambda_function.py file. Runtime refers to the language in which the Lambda function is written. For example, python3.6 or nodejs6.10, etc. Source and Index are not valid SAM template properties.
+
+You want to add a cross-origin resource sharing (CORS) configuration to one of your S3 buckets. Which of the following tabs should you choose to do so?
+
+   - Permissions
+  
+Explanation - To add a CORS configuration to your S3 bucket, you have to click the 'Permissions' tab and choose 'CORS configuration'. The 'Properties' tab is for configuring object settings such as versioning, transfer acceleration, and logging. The 'Management' tab is for managing object replication, analytics, and storage lifecycle. If you want to simplify bucket access by creating endpoints, you choose 'Access points'.
+
+What is the maximum size of an item in a DynamoDB table?
+
+   - 400 KB
+   
+Explanation - The maximum item size in DynamoDB is 400 KB.
