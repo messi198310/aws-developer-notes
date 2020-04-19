@@ -7,5 +7,5 @@ Segments - The compute resources running your application logic send data about 
 Sampling - To ensure efficient tracing and provide a representative sample of the requests that your application serves, the X-Ray SDK applies a sampling algorithm to determine which requests get traced.
 
     Annotations 	                                          Metadata
-  - Key-value pairs with string, number, or Boolean values 	  - Key-value pairs that can have values of any type, including objects and lists
-  - Indexed for use with filter expressions 	              - Not indexed for use with filter expressions
+    - Key-value pairs with string, number, or Boolean values  - Key-value pairs that can have values of any type, including objects and lists
+    - Indexed for use with filter expressions 	              - Not indexed for use with filter expressions
