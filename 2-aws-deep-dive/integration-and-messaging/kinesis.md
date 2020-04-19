@@ -18,10 +18,10 @@ Kinesis Data Streams
     Partition key is used to segregate and route records to different shards of a data stream. A partition key is specified by your data producer while adding data to an Amazon Kinesis data stream.
 
   	 
-Data retention period 	            24 hours - 7 days
-Maximum size of a data blob 	      1 MB
-Shard data input capacity 	        1 MB/sec
-Shard data output capacity 	        2 MB/sec
+    Data retention period 	            24 hours - 7 days
+    Maximum size of a data blob 	    1 MB
+    Shard data input capacity 	        1 MB/sec
+    Shard data output capacity 	        2 MB/sec
 
 Writing Data
 Kinesis Producer Library
