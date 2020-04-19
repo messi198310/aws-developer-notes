@@ -17,3 +17,11 @@ X-Ray intergrates with the following AWS services
     -   Amazon API Gateway
     -   EC2
     -   AWS Elastic Beanstalk
+
+X-Ray integrates with the following languagues
+- Node.js (JavaScript)
+- Python
+- Java (Java 8 compatible) • C# (.NET Core)
+- Golang
+- Ruby
+- .Net
