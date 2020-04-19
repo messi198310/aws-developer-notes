@@ -22,15 +22,15 @@ Eventually consistent reads:
 
 (# of items per second (Round up to the nearest 4 KB multiplier) / 2) * (ITEM SIZE (rounded up to the next 4KB multiplier) / 4 KB)
 
-Secondary Indexes
+    ##Secondary Indexes
 
-Global Secondary                                                    Index 	Local Secondary Index
-Partition and sort key can be different from base table 	          Same partition key as base table
-Query entire table across all partitions 	                          Query over single partition specified by partition key
-Queries are eventually consistent 	                                Queries are eventual or strongly consistent
-Queries/Scan consume RCU/WCU from index and not from base table 	  Queries/Scan consume RCU from base table
-Can only request attributes which are projected into the index 	    Can request attributes that are not projected into the index
-GSI can be added to existing table or be deleted from table 	      Cannot add LSI to existing table or delete existing LSI from table
+    Global Secondary                                                    Index 	Local Secondary Index
+    Partition and sort key can be different from base table 	          Same partition key as base table
+    Query entire table across all partitions 	                          Query over single partition specified by partition key
+    Queries are eventually consistent 	                                Queries are eventual or strongly consistent
+    Queries/Scan consume RCU/WCU from index and not from base table 	  Queries/Scan consume RCU from base table
+    Can only request attributes which are projected into the index 	    Can request attributes that are not projected into the index
+    GSI can be added to existing table or be deleted from table 	      Cannot add LSI to existing table or delete existing LSI from table
 
 Streams
 
