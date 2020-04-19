@@ -20,6 +20,6 @@ Caching
     To invalidate API gateway cache entry and reload it from the integration endpoint, the client must send a request that contains Cache-Control: max-age=0 header
 
   	 
-Default TTL value for API caching 	300 seconds
-Maximum TTL value for API caching 	3600 seconds
-Supported Cache size 	0.5GB up to 237GB
+    - Default TTL value for API caching 	300 seconds
+    - Maximum TTL value for API caching 	3600 seconds
+    - Supported Cache size 	                0.5GB up to 237GB
