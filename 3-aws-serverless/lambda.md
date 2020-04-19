@@ -47,3 +47,12 @@ AWS Lambda language support:
 - Allocated memory (128M to 3G)
 - Ability to deploy within a VPC + assign security groups
 - IAM execution role must be attached to the Lambda function
+
+Lambda
+  	 
+    - /tmp directory storage 	        512 MB
+    - Concurrent executions 	        1,000
+    - Function timeout 	                15 minutes
+    - Deployment package size 	        50 MB (zipped, for direct upload)
+                                        250 MB (unzipped, including layers)
+    - Environment variables size 	    4 KB
