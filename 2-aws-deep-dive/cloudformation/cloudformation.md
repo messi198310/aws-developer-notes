@@ -68,9 +68,9 @@ CloudFormation.
 - Templates components (one course section for each):
     1. Resources: your AWS resources declared in the template (MANDATORY)
     2. Parameters: the dynamic inputs for your template
-    3. Mappings: the static variables for your template
+    3. Mappings: the static variables for your template i.e Region AMI
     4. Outputs: References to what has been created
-    5. Conditionals: List of conditions to perform resource creation
+    5. Conditionals: List of conditions to perform resource creation i.e Environments
     6. Metadata
 - Templates helpers:
     1. References
