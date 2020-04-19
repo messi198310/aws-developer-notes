@@ -8,4 +8,12 @@ Sampling - To ensure efficient tracing and provide a representative sample of th
 
     Annotations 	                                          Metadata
     - Key-value pairs with string, number, or Boolean values  - Key-value pairs that can have values of any type, including objects and lists
-    - Indexed for use with filter expressions 	              - Not indexed for use with filter expressions
+    - Indexed for use with filter expressions 	             - Not indexed for use with filter expressions
+
+X-Ray intergrates with the following AWS services
+
+    -   Elastic Load Balancing
+    -   AWS Lambda
+    -   Amazon API Gateway
+    -   EC2
+    -   AWS Elastic Beanstalk
