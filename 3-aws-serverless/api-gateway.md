@@ -23,3 +23,12 @@ Caching
     - Default TTL value for API caching 	300 seconds
     - Maximum TTL value for API caching 	3600 seconds
     - Supported Cache size 	                0.5GB up to 237GB
+    
+    
+Advanced API Gateway Exam Tips
+
+Import API's using Swagger 2.0 def files
+API Gateway can be throttled
+    Default limits are 10,000 rps or 5000 concurrently
+API Gateway can be a SOAP passthrough
+
